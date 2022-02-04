@@ -297,10 +297,8 @@ router.get('/kisahnabi', async(req, res) => {
 router.get('/halah', async(req, res) => {
 	var text = req.query.text
 	if (!text) return res.json({ message: 'masukan parameter text' })
-	var huruf = halah
-	var huruf_kecil = huruf.toLowerCase();
-	var huruf_gede = huruf.toUpperCase();
-	res.json(text.replace(/[aiueo]/g, huruf_kecil).replace(/[AIUEO]/g, huruf_gede))
+	var ter = command[1].toLowerCase()
+	res.json(text.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
 })
 
 //RandomImageWithBuffer
