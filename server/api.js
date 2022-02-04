@@ -29,7 +29,7 @@ const {
   VIVA_,
   Kontan_,
   Merdeka_
-} = require('../scraper/news.js')
+} = require('../scraper/news')
 
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -296,6 +296,46 @@ router.get('/kisahnabi', async(req, res) => {
 //RandomImageWithBuffer
 router.get('/renungan', async(req, res) => {
 	var waif = (await axios.get(`https://raw.githubusercontent.com/BochilTeam/database/master/kata-kata/renungan.json`)).data
+	const result = waif[Math.floor(Math.random() * (waif.length))]
+	data = await getBuffer(result)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/aesthetic', async(req, res) => {
+	var waif = (await axios.get(`https://raw.githubusercontent.com/xdlyy404/api-faza/2338ea3cdec6ae463cb5bed8151bbeaab0871cb6/data/aesthetic.json`)).data
+	const result = waif[Math.floor(Math.random() * (waif.length))]
+	data = await getBuffer(result)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/cecan', async(req, res) => {
+	var waif = (await axios.get(`https://raw.githubusercontent.com/xdlyy404/api-faza/2338ea3cdec6ae463cb5bed8151bbeaab0871cb6/data/cecan.json`)).data
+	const result = waif[Math.floor(Math.random() * (waif.length))]
+	data = await getBuffer(result)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/cogan', async(req, res) => {
+	var waif = (await axios.get(`https://raw.githubusercontent.com/xdlyy404/api-faza/2338ea3cdec6ae463cb5bed8151bbeaab0871cb6/data/cogan.json`)).data
+	const result = waif[Math.floor(Math.random() * (waif.length))]
+	data = await getBuffer(result)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/darkjoke', async(req, res) => {
+	var waif = (await axios.get(`https://raw.githubusercontent.com/bagusganz8/BagusBot-Api/main/Random/darkjoke.json`)).data
 	const result = waif[Math.floor(Math.random() * (waif.length))]
 	data = await getBuffer(result)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
