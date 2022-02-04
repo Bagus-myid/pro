@@ -241,13 +241,8 @@ router.get('/mediafire', async(req, res) => {
 router.get('/joox', async(req, res) => {
 	var query = req.query.query
 	if (!query) return res.json({ message: 'masukan parameter query' })
-	var res = await joox(q)
-	try {
-		res.json(hasil)
-	} catch(err) {
-		console.log(err)
-		res.json({ message: 'Ups, error' })
-	}
+	var result = await joox(query)
+	res.json(result)
 })
 
 router.get('/bucin', async(req, res) => {
