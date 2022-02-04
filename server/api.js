@@ -61,7 +61,8 @@ router.get('/apkmirror', async(req, res) => {
 	var query = req.query.query
 	if (!query) return res.json({ message: 'masukan parameter query' })
 	var result = await apkmirror(query)
-	res.json({ result })
+	var resultl = result.data
+	res.json({ resultl })
 })
 
 router.get('/happymod', async(req, res) => {
@@ -84,6 +85,55 @@ router.get('/linkwa', async(req, res) => {
 	var query = req.query.query
 	if (!query) return res.json({ message: 'masukan parameter query' })
 	var hasil = await hxz.linkwa(query)
+	try {
+		res.json(hasil)
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'Ups, error' })
+	}
+})
+
+router.get('/wikisearch', async(req, res) => {
+	var query = req.query.query
+	if (!query) return res.json({ message: 'masukan parameter query' })
+	var hasil = await wikiSearch(query)
+	try {
+		res.json(hasil)
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'Ups, error' })
+	}
+})
+
+router.get('/liriklagu', async(req, res) => {
+	var query = req.query.query
+	if (!query) return res.json({ message: 'masukan parameter query' })
+	var hasil = await lirikLagu(query)
+	try {
+		res.json(hasil)
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'Ups, error' })
+	}
+})
+
+router.get('/jagokata', async(req, res) => {
+	var kata = req.query.kata
+	if (!kata) return res.json({ message: 'masukan parameter kata' })
+	var hasil = await jagokata(kata)
+	try {
+		res.json(hasil)
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'Ups, error' })
+	}
+})
+
+//Downloader
+router.get('/instagram', async(req, res) => {
+	var link = req.query.link
+	if (!link) return res.json({ message: 'masukan parameter Link' })
+	var hasil = await igDownloader(link)
 	try {
 		res.json(hasil)
 	} catch(err) {
