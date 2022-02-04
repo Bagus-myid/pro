@@ -31,6 +31,10 @@ const {
   Merdeka_
 } = require('../scraper/news.js')
 
+async function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 router.get('/artinama', async(req, res) => {
 	var nama = req.query.nama
 	if (!nama) return res.json({ message: 'masukan parameter nama' })
@@ -211,10 +215,9 @@ router.get('/pinterest', async(req, res) => {
 	var query = req.query.query
 	if (!query) return res.json({ message: 'masukan parameter query' })
 	var result = await pinterest(query)
-	res.json({ result })
+	res.json(result.result)
 })
 
-//Downloader
 router.get('/instagram', async(req, res) => {
 	var link = req.query.link
 	if (!link) return res.json({ message: 'masukan parameter Link' })
@@ -268,7 +271,7 @@ router.get('/dafontdl', async(req, res) => {
 
 router.get('/hentai-video', async(req, res) => {
 	var result = await HentaiVid()
-	res.json({result})
+	res.json(result.hasil)
 })
 
 router.get('/bucin', async(req, res) => {
@@ -278,6 +281,27 @@ router.get('/bucin', async(req, res) => {
         	var result = data[Math.floor(Math.random() * data.length)];
 	res.json(result)
 	})
+})
+
+router.get('/kisahnabi', async(req, res) => {
+	var nabi = req.query.nabi
+	if (!nabi) return res.json({ message: 'masukan parameter nabi' })
+	fetch(encodeURI(`https://raw.githubusercontent.com/bulansutena/Database-1/904eec390ea11805cc23922bfb1dc6abb4684302/kisahnabi/${nabi}.json`))
+        .then(response => response.json())
+        .then(data => {
+	res.json(data)
+	})
+})
+
+//RandomImageWithBuffer
+router.get('/renungan', async(req, res) => {
+	var waif = (await axios.get(`https://raw.githubusercontent.com/BochilTeam/database/master/kata-kata/renungan.json`)).data
+	const result = waif[Math.floor(Math.random() * (waif.length))]
+	data = await getBuffer(result)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
 })
 
 module.exports = router
