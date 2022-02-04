@@ -5,6 +5,7 @@ const fetch = require('node-fetch')
 const fs = require('fs')
 const hxz = require('hxz-api')
 const { getBuffer } = require('../lib/function')
+const axios = require('axios')
 
 const { artiNama, artiMimpi, ramalJodoh, nomorHoki, pinterest, igDownloader, lirikLagu, mediafireDl, wikiSearch, happymodSearch, playstore, linkwa, jagokata, herodetails, herolist, styleText, joox, HentaiVid, dafontSearch, dafontDown, apkmody, apkmirror } = require('../scraper/sybagus')
 const {
@@ -241,8 +242,16 @@ router.get('/mediafire', async(req, res) => {
 router.get('/joox', async(req, res) => {
 	var query = req.query.query
 	if (!query) return res.json({ message: 'masukan parameter query' })
-	var result = await joox(query)
-	res.json(result)
+	var res = await joox(query)
+	var result = res.data
+	res.json({result})
+})
+
+router.get('/bbc', async(req, res) => {
+	(async() => {
+		result = await BBC()
+	res.json({result})
+	})()
 })
 
 router.get('/bucin', async(req, res) => {
