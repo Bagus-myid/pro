@@ -105,18 +105,6 @@ router.get('/wikisearch', async(req, res) => {
 	}
 })
 
-router.get('/liriklagu', async(req, res) => {
-	var query = req.query.query
-	if (!query) return res.json({ message: 'masukan parameter query' })
-	var hasil = await lirikLagu(query)
-	try {
-		res.json(hasil)
-	} catch(err) {
-		console.log(err)
-		res.json({ message: 'Ups, error' })
-	}
-})
-
 router.get('/jagokata', async(req, res) => {
 	var kata = req.query.kata
 	if (!kata) return res.json({ message: 'masukan parameter kata' })
