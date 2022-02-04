@@ -7,6 +7,28 @@ const hxz = require('hxz-api')
 const { getBuffer } = require('../lib/function')
 
 const { artiNama, artiMimpi, ramalJodoh, nomorHoki, pinterest, igDownloader, lirikLagu, mediafireDl, wikiSearch, happymodSearch, playstore, linkwa, jagokata, herodetails, herolist, styleText, joox, HentaiVid, dafontSearch, dafontDown, apkmody, apkmirror } = require('../scraper/sybagus')
+const {
+  metroTV_, 
+  CNN_, 
+  iNewsTV_, 
+  Kumparan_, 
+  Tribun_, 
+  DailyNews_, 
+  DetikNews_, 
+  Okezone_, 
+  CNBC_, 
+  KoranFajar_, 
+  Kompas_, 
+  KoranSindo_, 
+  TempoNews_, 
+  Indozone_, 
+  AntaraNews_, 
+  Republika_,
+  BBC,
+  VIVA_,
+  Kontan_,
+  Merdeka_
+} = require('../scraper/news.js')
 
 router.get('/artinama', async(req, res) => {
 	var nama = req.query.nama
@@ -184,6 +206,13 @@ router.get('/namaninja', async(req, res) => {
     }))
 })
 
+router.get('/pinterest', async(req, res) => {
+	var query = req.query.query
+	if (!query) return res.json({ message: 'masukan parameter query' })
+	var result = await pinterest(query)
+	res.json({ result })
+})
+
 //Downloader
 router.get('/instagram', async(req, res) => {
 	var link = req.query.link
@@ -195,6 +224,51 @@ router.get('/instagram', async(req, res) => {
 		console.log(err)
 		res.json({ message: 'Ups, error' })
 	}
+})
+
+router.get('/mediafire', async(req, res) => {
+	var link = req.query.link
+	if (!link) return res.json({ message: 'masukan parameter Link' })
+	var hasil = await mediafireDl(link)
+	try {
+		res.json(hasil)
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'Ups, error' })
+	}
+})
+
+router.get('/joox', async(req, res) => {
+	var query = req.query.query
+	if (!query) return res.json({ message: 'masukan parameter query' })
+	var res = await joox(q)
+	hasil = res.data[Math.floor(Math.random() * res.data.length)]
+	try {
+		res.json(hasil)
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'Ups, error' })
+	}
+})
+
+router.get('/jooxsearch', async(req, res) => {
+	var query = req.query.query
+	if (!query) return res.json({ message: 'masukan parameter query' })
+	var res = await joox(q)
+	try {
+		res.json(hasil)
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'Ups, error' })
+	}
+})
+
+//News
+router.get('/news/bbc', async(req, res) => {
+	(async() => {
+	result = await BBC()
+	res.json(result)
+	})
 })
 
 router.get('/bucin', async(req, res) => {
