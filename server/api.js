@@ -149,41 +149,6 @@ router.get('/styletext', async(req, res) => {
 	res.json(Object.entries(await styleText(text)).map(([name, value]) => `_${name}_ : ${value}`).join`\n\n`)
 })
 
-router.get('/namaninja', async(req, res) => {
-	var text = req.query.text
-	if (!text) return res.json({ message: 'masukan parameter text' })
-	res.json(text.replace(/[a-z]/gi, v => {
-        switch (v.toLowerCase()) {
-            case 'a': return 'ka'
-            case 'b': return 'tu'
-            case 'c': return 'mi'
-            case 'd': return 'te'
-            case 'e': return 'ku'
-            case 'f': return 'lu'
-            case 'g': return 'ji'
-            case 'h': return 'ri'
-            case 'i': return 'ki'
-            case 'j': return 'zu'
-            case 'k': return 'me'
-            case 'l': return 'ta'
-            case 'm': return 'rin'
-            case 'n': return 'to'
-            case 'o': return 'mo'
-            case 'p': return 'no'
-            case 'q': return 'ke'
-            case 'r': return 'shi'
-            case 's': return 'ari'
-            case 't': return 'ci'
-            case 'u': return 'do'
-            case 'v': return 'ru'
-            case 'w': return 'mei'
-            case 'x': return 'na'
-            case 'y': return 'fu'
-            case 'z': return 'zi'
-        }
-    }))
-})
-
 //Downloader
 router.get('/instagram', async(req, res) => {
 	var link = req.query.link
