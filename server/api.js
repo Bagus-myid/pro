@@ -247,8 +247,27 @@ router.get('/joox', async(req, res) => {
 	res.json({result})
 })
 
-router.get('/news/bbc', async(req, res) => {
-	var result = await BBC()
+router.get('/dafont', async(req, res) => {
+	var query = req.query.query
+	if (!query) return res.json({ message: 'masukan parameter query' })
+	var result = await dafontSearch(query)
+	res.json({result})
+})
+
+router.get('/dafontdl', async(req, res) => {
+	var link = req.query.link
+	if (!link) return res.json({ message: 'masukan parameter Link' })
+	var hasil = await dafontDown(link)
+	try {
+		res.json(hasil)
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'Ups, error' })
+	}
+})
+
+router.get('/hentai-video', async(req, res) => {
+	var result = await HentaiVid()
 	res.json({result})
 })
 
