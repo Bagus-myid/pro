@@ -247,11 +247,9 @@ router.get('/joox', async(req, res) => {
 	res.json({result})
 })
 
-router.get('/bbc', async(req, res) => {
-	(async() => {
-		result = await BBC()
+router.get('/news/bbc', async(req, res) => {
+	var result = await BBC()
 	res.json({result})
-	})()
 })
 
 router.get('/bucin', async(req, res) => {
