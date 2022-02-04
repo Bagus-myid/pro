@@ -118,16 +118,11 @@ router.get('/jagokata', async(req, res) => {
 	}
 })
 
-router.get('/herodetail', async(req, res) => {
+router.get('/herodetails', async(req, res) => {
 	var hero = req.query.hero
 	if (!hero) return res.json({ message: 'masukan parameter hero' })
-	var hasil = await herodetails(hero)
-	try {
-		res.json(hasil)
-	} catch(err) {
-		console.log(err)
-		res.json({ message: 'Ups, error' })
-	}
+	var result = await herodetails(hero)
+	res.json({ result })
 })
 
 router.get('/herolist', async(req, res) => {
@@ -138,6 +133,12 @@ router.get('/herolist', async(req, res) => {
 		console.log(err)
 		res.json({ message: 'Ups, error' })
 	}
+})
+
+router.get('/styletext', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	res.json(Object.entries(await styleText(text)).map(([name, value]) => `_${name}_ : ${value}`).join`\n\n`)
 })
 
 //Downloader
