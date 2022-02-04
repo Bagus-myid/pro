@@ -97,9 +97,8 @@ router.get('/wikisearch', async(req, res) => {
 	var query = req.query.query
 	if (!query) return res.json({ message: 'masukan parameter query' })
 	var hasil = await wikiSearch(query)
-	var result = hasil.wiki
 	try {
-		res.json(result)
+		res.json(hasil)
 	} catch(err) {
 		console.log(err)
 		res.json({ message: 'Ups, error' })
