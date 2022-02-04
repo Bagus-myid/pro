@@ -1,6 +1,7 @@
 const express = require('express')
 var router = express.Router();
 __path = process.cwd()
+const fetch = require('node-fetch')
 const fs = require('fs')
 const hxz = require('hxz-api')
 const { getBuffer } = require('../lib/function')
@@ -118,6 +119,13 @@ router.get('/jagokata', async(req, res) => {
 	}
 })
 
+router.get('/liriklagu', async(req, res) => {
+	var lagu = req.query.lagu
+	if (!lagu) return res.json({ message: 'masukan parameter lagu' })
+	var result = await lirikLagu(lagu)
+	res.json({ result })
+})
+
 router.get('/herodetails', async(req, res) => {
 	var hero = req.query.hero
 	if (!hero) return res.json({ message: 'masukan parameter hero' })
@@ -141,6 +149,41 @@ router.get('/styletext', async(req, res) => {
 	res.json(Object.entries(await styleText(text)).map(([name, value]) => `_${name}_ : ${value}`).join`\n\n`)
 })
 
+router.get('/namaninja', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	res.json(text.replace(/[a-z]/gi, v => {
+        switch (v.toLowerCase()) {
+            case 'a': return 'ka'
+            case 'b': return 'tu'
+            case 'c': return 'mi'
+            case 'd': return 'te'
+            case 'e': return 'ku'
+            case 'f': return 'lu'
+            case 'g': return 'ji'
+            case 'h': return 'ri'
+            case 'i': return 'ki'
+            case 'j': return 'zu'
+            case 'k': return 'me'
+            case 'l': return 'ta'
+            case 'm': return 'rin'
+            case 'n': return 'to'
+            case 'o': return 'mo'
+            case 'p': return 'no'
+            case 'q': return 'ke'
+            case 'r': return 'shi'
+            case 's': return 'ari'
+            case 't': return 'ci'
+            case 'u': return 'do'
+            case 'v': return 'ru'
+            case 'w': return 'mei'
+            case 'x': return 'na'
+            case 'y': return 'fu'
+            case 'z': return 'zi'
+        }
+    }))
+})
+
 //Downloader
 router.get('/instagram', async(req, res) => {
 	var link = req.query.link
@@ -151,6 +194,49 @@ router.get('/instagram', async(req, res) => {
 	} catch(err) {
 		console.log(err)
 		res.json({ message: 'Ups, error' })
+	}
+})
+
+//Random Text
+router.get('/bucin', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/BochilTeam/database/master/kata-kata/bucin.json`))
+        .then(response => response.json())
+        .then(data => {
+        	var result = data[Math.floor(Math.random() * data.length)];
+	try {
+		res.json(result)
+		})
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'internal server error, silahkan chat owner' })
+	}
+})
+
+router.get('/dare', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/BochilTeam/database/master/kata-kata/dare.json`))
+        .then(response => response.json())
+        .then(data => {
+        	var result = data[Math.floor(Math.random() * data.length)];
+	try {
+		res.json(result)
+		})
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'internal server error, silahkan chat owner' })
+	}
+})
+
+router.get('/truth', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/BochilTeam/database/master/kata-kata/truth.json`))
+        .then(response => response.json())
+        .then(data => {
+        	var result = data[Math.floor(Math.random() * data.length)];
+	try {
+		res.json(result)
+		})
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'internal server error, silahkan chat owner' })
 	}
 })
 
