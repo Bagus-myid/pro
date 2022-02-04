@@ -293,6 +293,14 @@ router.get('/kisahnabi', async(req, res) => {
 	})
 })
 
+//vokal
+router.get('/halah', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	ter = halah[1].toLowerCase()
+	res.json(text.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase())
+})
+
 //RandomImageWithBuffer
 router.get('/renungan', async(req, res) => {
 	var waif = (await axios.get(`https://raw.githubusercontent.com/BochilTeam/database/master/kata-kata/renungan.json`)).data
