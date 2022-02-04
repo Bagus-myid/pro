@@ -197,4 +197,13 @@ router.get('/instagram', async(req, res) => {
 	}
 })
 
+router.get('/bucin', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/BochilTeam/database/master/kata-kata/bucin.json`))
+        .then(response => response.json())
+        .then(data => {
+        	var result = data[Math.floor(Math.random() * data.length)];
+	res.json(result)
+	})
+})
+
 module.exports = router
