@@ -381,4 +381,11 @@ router.get('/darkjoke', async(req, res) => {
     await fs.unlinkSync(__path + '/tmp/waifu.png')
 })
 
+router.get('/bbc', async(req, res) => {
+	(async() => {
+	 result = await BBC()
+	res.json(result)
+})
+})();
+
 module.exports = router
