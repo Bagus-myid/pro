@@ -384,9 +384,9 @@ router.get('/darkjoke', async(req, res) => {
 })
 
 router.get('/asupan', async(req, res) => {
-	var waif = (await axios.get(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/video/tiktok.json`)).data
+	var waif = (await axios.get(`https://me-bagus.herokuapp.com/api/asupan/tiktok?apikey=b`)).data
 	const result = waif[Math.floor(Math.random() * (waif.length))]
-	data = await getBuffer(result.url)
+	data = await getBuffer(result.result.url)
     await fs.writeFileSync(__path +'/tmp/asupan.mp4', data)
     await res.sendFile(__path +'/tmp/asupan.mp4')
     await sleep(3000)
