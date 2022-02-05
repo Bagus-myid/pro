@@ -4,7 +4,6 @@ __path = process.cwd()
 const fetch = require('node-fetch')
 const fs = require('fs')
 const hxz = require('hxz-api')
-const zrapi = require("zrapi")
 const { getBuffer } = require('../lib/function')
 const axios = require('axios')
 const { spawn, exec } = require('child_process')
@@ -489,17 +488,6 @@ router.get('/game', async(req, res) => {
         .then(data => {
         	var result = data[Math.floor(Math.random() * data.length)];
 	res.json(result)
-	})
-})
-
-router.get('/tinyurl', async(req, res) => {
-	var url = req.query.url
-	if (!url) return res.json({ message: 'masukan parameter url' })
-	fetch(encodeURI(`https://tinyurl.com/api-create.php?url=${url}`))
-        .then(response => response.json())
-        .then(data => {
-        	var result = data
-	res.json({result})
 	})
 })
 
