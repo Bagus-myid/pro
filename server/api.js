@@ -1025,7 +1025,7 @@ router.get('/pornhub', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/pornhub?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/pornhub?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
@@ -1038,7 +1038,7 @@ router.get('/glitch', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/glitch?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/glitch?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
@@ -1051,7 +1051,7 @@ router.get('/glitch2', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/glitch2?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/glitch2?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
@@ -1064,7 +1064,7 @@ router.get('/avengers', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/avengers?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/avengers?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
@@ -1077,7 +1077,7 @@ router.get('/space', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/space?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/space?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
@@ -1090,7 +1090,7 @@ router.get('/ninja', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/ninjalogo?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/ninjalogo?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
@@ -1103,7 +1103,7 @@ router.get('/marvel', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/marvellogo?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/marvellogo?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
@@ -1116,7 +1116,7 @@ router.get('/wolf', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/wolflogo?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/wolflogo?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
@@ -1129,7 +1129,7 @@ router.get('/wolf-galaxy', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/wolflogogalaxy?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/wolflogogalaxy?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
@@ -1142,7 +1142,7 @@ router.get('/3dsteel', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/3dsteel?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/3dsteel?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
@@ -1155,7 +1155,7 @@ router.get('/wallgraffiti', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/wallgraffiti?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/wallgraffiti?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
@@ -1168,7 +1168,7 @@ router.get('/coolgraffiti', async(req, res) => {
 	var text2 = req.query.text2
 	if (!text1) return res.json({ message: 'masukan parameter text1' })
 	if (!text2) return res.json({ message: 'masukan parameter text2' })
-	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/coolgraffiti?apikey=b&text=${text1}&text2=${text2}`)).data
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/coolgraffiti?apikey=b&text1=${text1}&text2=${text2}`)).data
 	data = await getBuffer(result.data)
     await fs.writeFileSync(__path +'/tmp/waifu.png', data)
     await res.sendFile(__path +'/tmp/waifu.png')
