@@ -6,7 +6,7 @@ const fs = require('fs')
 const hxz = require('hxz-api')
 const { getBuffer } = require('../lib/function')
 const axios = require('axios')
-const { spawn } = require('child_process')
+const { spawn, exec } = require('child_process')
 
 const { artiNama, artiMimpi, ramalJodoh, nomorHoki, pinterest, igDownloader, lirikLagu, mediafireDl, wikiSearch, happymodSearch, playstore, linkwa, jagokata, herodetails, herolist, styleText, joox, HentaiVid, dafontSearch, dafontDown, apkmody, apkmirror } = require('../scraper/sybagus')
 const {
@@ -401,7 +401,7 @@ __path + '/lib/Indie-Flower.ttf',
 fixHeight,
 __path + '/lib/buku/setelahkiri.jpg',
 ])
-.on('error', () => res.json({ message: 'Ups, error' })
+.on('error', () => console.log('error')
 .on('exit', () => {
 	res.sendFile(__path + '/lib/buku/setelahkiri.jpg')
 	})
