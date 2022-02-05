@@ -497,15 +497,12 @@ router.get('/game', async(req, res) => {
 router.get('/tinyurl', async(req, res) => {
 	var url = req.query.url
 	if (!url) return res.json({ message: 'masukan parameter url' })
-	request(`https://tinyurl.com/api-create.php?url=${url}`, function (error, response, body) {
-	try {
-		res.json({
-                 result : `${body}`
-             })
-	} catch(err) {
-		console.log(err)
-		res.json({ message: 'Url tidak valid' })
-	}
+	fetch(encodeURI(`https://tinyurl.com/api-create.php?url=${url}`))
+        .then(response => response.json())
+        .then(data => {
+        	var result = data
+	res.json({result})
+	})
 })
 
 module.exports = router
