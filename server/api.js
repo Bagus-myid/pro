@@ -400,6 +400,15 @@ router.get('/holoh', async(req, res) => {
 	res.json(result)
 })
 
+router.get('/couple', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/couple.json`))
+        .then(response => response.json())
+        .then(data => {
+        	var result = data[Math.floor(Math.random() * data.length)];
+	res.json(result)
+	})
+})
+
 //RandomImageWithBuffer
 router.get('/renungan', async(req, res) => {
 	var waif = (await axios.get(`https://raw.githubusercontent.com/BochilTeam/database/master/kata-kata/renungan.json`)).data
