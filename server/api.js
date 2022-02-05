@@ -399,10 +399,7 @@ __path + '/lib/Indie-Flower.ttf',
 fixHeight,
 __path + '/lib/buku/setelahkiri.jpg',
 ])
-.on('error', () => console.log('error')
-.on('exit', () => {
 	res.sendFile(__path + '/lib/buku/setelahkiri.jpg')
 	})
-})
 
 module.exports = router
