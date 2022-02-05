@@ -21,7 +21,7 @@ const BBC = async () => {
 		let berita_url = $(b).find("a").attr("href");
 		const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 			berita,
 			berita_diupload,
 			berita_url: "https://www.bbc.com" + berita_url,
@@ -55,7 +55,7 @@ let berita_thumb = $(b).find('div.Imageweb__ImageWrapper-sc-1kvvof-0.eZCymS').at
 let berita_diupload = $(b).find('span.Textweb__StyledText-sc-1fa9e8r-0.exBPjh').text().trim().replace(' ',' : ').slice(5)
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url: 'https://m.kumparan.com' + berita_url,
 	berita_thumb,
@@ -90,7 +90,7 @@ let berita_url = $(b).find('a').attr('href')
 let berita_thumb = $(b).find('div.lazy.wdtop-col-img').attr('data-src')
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url,
 	berita_diupload,
@@ -122,7 +122,7 @@ let img = $(b).find('img').attr('src')
 let jenis = $(b).find('span.date').text().trim()
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita: y,
 	berita_url: berita,
 	berita_thumb: img
@@ -152,7 +152,7 @@ let title = $(b).find('h2 > a').text().trim()
 let berita_url = $(b).find('h2 > a').attr('href')
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
  berita: title,
 berita_url: 'https://m.metrotvnews.com' + berita_url,
  berita_thumb: img
@@ -186,7 +186,7 @@ let berita_jenis = $(b).find('h4 > a').text().trim()
 let berita_diupload = $(b).find('time').text().trim()
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url,
 	berita_thumb,
@@ -220,7 +220,7 @@ let berita_url = $(b).find('a').attr('href')
 let berita_thumb = $(b).find('img').attr('data-src')
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url,
 	berita_thumb
@@ -250,7 +250,7 @@ let berita_thumb = $(b).find('img').attr('src').replace('?w=220&q=90','')
 let berita_diupload = $(b).find('div.media__date > span').attr('title')
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url,
 	berita_thumb,
@@ -286,7 +286,7 @@ let berita_url = $(d).find('a').attr('href')
 let berita_diupload = $(f).find('span.timego').text().slice(1)
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url,
 	berita_thumb,
@@ -322,7 +322,7 @@ let berita_diupload = $(b).find('span.date').text().trim()
 let berita_thumb = $(b).find('img').attr('src')
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url,
 	berita_thumb,
@@ -357,7 +357,7 @@ let berita_jenis = $(b).find('li.post-meta').text().trim()
 let berita_thumb = $(b).find('img.img-home.wp-post-image').attr('data-cfsrc')
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url,
 	berita_thumb,
@@ -393,7 +393,7 @@ let berita_jenis = $(b).find('strong > a').text().trim()
 let berita_diupload = $(b).find('div.article__channel').text().trim().slice(11).replace(' - ','')
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url,
   berita_thumb,
@@ -428,7 +428,7 @@ let berita_url = $(b).find('div > a').attr('href')
 let berita_jenis = $(b).find('div.breaking-title > p').text().trim()
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_jenis,
 	berita_url,
@@ -462,7 +462,7 @@ let berita_thumb = $(b).find('a > img').attr('src')
 let berita_diupload = $(b).find('span').text()
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url,
 	berita_thumb,
@@ -499,7 +499,7 @@ let berita_jenis = $(b).find('div.text').text().replace(/\n/g,'').replace(/     
 let berita_diupload= $(b).find('div.info.un-i').text().replace(/\n/g,'').replace(/  /g,'')
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
  berita,
  berita_url,
  berita_thumb,
@@ -537,7 +537,7 @@ let berita_diupload = $(b).find('div.meta').text().replace(' -','     ').slice(1
 let berita_thumb = $(b).find('img').attr('data-src')
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url,
 	berita_thumb,
@@ -573,7 +573,7 @@ let berita_diupload = $(b).find('span.date').text()
 let berita_thumb = $(b).find('img').attr('data-original')
 const result = {
   status: res.status,
-  creator: "@dehan_j1ng",
+  creator: "@Bagus",
 	berita,
 	berita_url,
 	berita_thumb,
@@ -682,7 +682,7 @@ const Merdeka_ = async () => {
     let berita_diupload = $(b).find("div.time").text();
     const result = {
       status: res.status,
-      creator: "@dehan_j1ng",
+      creator: "@Bagus",
       berita,
       berita_url,
       berita_thumb,
