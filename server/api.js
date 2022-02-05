@@ -381,8 +381,84 @@ router.get('/darkjoke', async(req, res) => {
     await fs.unlinkSync(__path + '/tmp/waifu.png')
 })
 
+//news
 router.get('/bbc', async(req, res) => {
 	result = await BBC()
+	res.json(result)
+})
+
+router.get('/inews', async(req, res) => {
+	result = await iNewsTV_()
+	res.json(result)
+})
+
+router.get('/cnn', async(req, res) => {
+	result = await CNN_()
+	res.json(result)
+})
+
+router.get('/tribun', async(req, res) => {
+	result = await Tribun_()
+	res.json(result)
+})
+
+router.get('/daily', async(req, res) => {
+	result = await DailyNews_()
+	res.json(result)
+})
+
+router.get('/detik', async(req, res) => {
+	result = await DetikNews_()
+	res.json(result)
+})
+
+router.get('/okezone', async(req, res) => {
+	result = await Okezone_()
+	res.json(result)
+})
+
+router.get('/cnbc', async(req, res) => {
+	result = await CNBC_()
+	res.json(result)
+})
+
+router.get('/fajar', async(req, res) => {
+	result = await KoranFajar_()
+	res.json(result)
+})
+
+router.get('/kompas', async(req, res) => {
+	result = await iNewsTV_()
+	res.json(result)
+})
+
+router.get('/koransindo', async(req, res) => {
+	result = await KoranSindo_()
+	res.json(result)
+})
+
+router.get('/tempo', async(req, res) => {
+	result = await TempoNews_()
+	res.json(result)
+})
+
+router.get('/indozone', async(req, res) => {
+	result = await Indozone_()
+	res.json(result)
+})
+
+router.get('/antara', async(req, res) => {
+	result = await AntaraNews_()
+	res.json(result)
+})
+
+router.get('/kontan', async(req, res) => {
+	result = await Kontan_()
+	res.json(result)
+})
+
+router.get('/merdeka', async(req, res) => {
+	result = await Merdeka_()
 	res.json(result)
 })
 
