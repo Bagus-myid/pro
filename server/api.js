@@ -462,4 +462,33 @@ router.get('/merdeka', async(req, res) => {
 	res.json(result)
 })
 
+//inigame
+router.get('/truth', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/BochilTeam/database/master/kata-kata/truth.json`))
+        .then(response => response.json())
+        .then(data => {
+        	var result = data[Math.floor(Math.random() * data.length)];
+	res.json(result)
+	})
+})
+router.get('/dare', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/BochilTeam/database/master/kata-kata/dare.json`))
+        .then(response => response.json())
+        .then(data => {
+        	var result = data[Math.floor(Math.random() * data.length)];
+	res.json(result)
+	})
+})
+
+router.get('/game', async(req, res) => {
+	var type = req.query.type
+	if (!type) return res.json({ message: 'masukan parameter type' })
+	fetch(encodeURI(`https://raw.githubusercontent.com/BochilTeam/database/master/games/${type}.json`))
+        .then(response => response.json())
+        .then(data => {
+        	var result = data[Math.floor(Math.random() * data.length)];
+	res.json(result)
+	})
+})
+
 module.exports = router
