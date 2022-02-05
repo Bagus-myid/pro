@@ -537,4 +537,15 @@ router.get('/soundcloud', async(req, res) => {
 	}
 })
 
+router.get('/blackpink', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/blackpink?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
 module.exports = router
