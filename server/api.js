@@ -6,6 +6,7 @@ const fs = require('fs')
 const hxz = require('hxz-api')
 const { getBuffer } = require('../lib/function')
 const axios = require('axios')
+const { spawn } = require('child_process')
 
 const { artiNama, artiMimpi, ramalJodoh, nomorHoki, pinterest, igDownloader, lirikLagu, mediafireDl, wikiSearch, happymodSearch, playstore, linkwa, jagokata, herodetails, herolist, styleText, joox, HentaiVid, dafontSearch, dafontDown, apkmody, apkmirror } = require('../scraper/sybagus')
 const {
@@ -298,7 +299,35 @@ router.get('/halah', async(req, res) => {
 	var text = req.query.text
 	if (!text) return res.json({ message: 'masukan parameter text' })
 	var result =  text.replace(/[aiueo]/g, 'a').replace(/[AIUEO]/g, 'A')
-	res.json({result})
+	res.json(result)
+})
+
+router.get('/hilih', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	var result =  text.replace(/[aiueo]/g, 'i').replace(/[AIUEO]/g, 'I')
+	res.json(result)
+})
+
+router.get('/huluh', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	var result =  text.replace(/[aiueo]/g, 'u').replace(/[AIUEO]/g, 'U')
+	res.json(result)
+})
+
+router.get('/heleh', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	var result =  text.replace(/[aiueo]/g, 'e').replace(/[AIUEO]/g, 'E')
+	res.json(result)
+})
+
+router.get('/holoh', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	var result =  text.replace(/[aiueo]/g, 'o').replace(/[AIUEO]/g, 'O')
+	res.json(result)
 })
 
 //RandomImageWithBuffer
@@ -350,6 +379,37 @@ router.get('/darkjoke', async(req, res) => {
     await res.sendFile(__path +'/tmp/waifu.png')
     await sleep(3000)
     await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/nuliskiri', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+splitText = text.replace(/(\S+\s*){1,9}/g, '$&\n')
+fixHeight = splitText.split('\n').slice(0, 31).join('\n')
+spawn('convert', [
+'./lib//buku/sebelumkiri.jpg',
+'-font',
+'./lib/Indie-Flower.ttf',
+'-size',
+'960x1280',
+'-pointsize',
+'22',
+'-interline-spacing',
+'2',
+'-annotate',
+'+140+153',
+fixHeight,
+'./lib/buku/setelahkiri.jpg'
+])
+.on('error', () => res.json({ message: 'Ups, error' })
+.on('exit', () => {
+	result = fs.readFileSync('./lib//buku/setelahkiri.jpg')
+	data = await getBuffer(result)
+    await fs.writeFileSync(__path +'/tmp/waifu.jpg', data)
+    await res.sendFile(__path +'/tmp/waifu.jpg')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.jpg')
+    })
 })
 
 module.exports = router
