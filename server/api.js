@@ -382,10 +382,8 @@ router.get('/darkjoke', async(req, res) => {
 })
 
 router.get('/bbc', async(req, res) => {
-	(async() => {
-	 result = await BBC()
+	result = await BBC()
 	res.json(result)
 })
-})();
 
 module.exports = router
