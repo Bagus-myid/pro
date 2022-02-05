@@ -505,7 +505,6 @@ router.get('/tinyurl', async(req, res) => {
 	} catch(err) {
 		console.log(err)
 		res.json({ message: 'Url tidak valid' })
-		}
 	}
 })
 
