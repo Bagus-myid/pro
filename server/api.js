@@ -548,4 +548,633 @@ router.get('/blackpink', async(req, res) => {
     await fs.unlinkSync(__path + '/tmp/waifu.png')
 })
 
+router.get('/neon', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/neon?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/greenneon', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/greenneon?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/futureneon', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/futureneon?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/sandwrite', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/sandwrite?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/sandsummer', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/sandsummer?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/sandengraved', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/sandengraved?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/metaldark', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/metaldark?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/neonlight', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/neonlight?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/holographic', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/holographic?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/text1917', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/text1917?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/minion', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/minion?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/deluxesilver', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/deluxesilver?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/blood', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/blood?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/blood2', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/blood2?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/halloween', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/halloween?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/jokerlogo', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/jokerlogo?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/firework', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/firework?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/naturalleaves', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/naturalleaves?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+//M
+router.get('/bokeh', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/bokeh?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/toxic', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/toxic?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/strawberry', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/strawberry?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/3dbox', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/3dbox?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/roadwarning', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/roadwarning?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/breakwall', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/breakwall?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/icecold', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/icecold?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/luxury', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/luxury?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/cloud', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/cloud?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/summersand', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/summersand?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/thunder', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/thunder?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/magma', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/magma?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/impressive-glitch', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/iglitch?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/harrypotter', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/harrypotter?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/foggywindow', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/foggywindow?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/watercolor', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/watercolor?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/graffiti', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/wonderfulgraffiti?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/matrix', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/matrix?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/sketchtext', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/sketchtext?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+router.get('/fiction', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/fiction?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/greenhorror', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/greenhorror?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/dropwater', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/dropwater?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/christmas', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/christmas?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/3dgradient', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/3dgradient?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/transformer', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/transformer?apikey=b&text=${text}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+//textw
+router.get('/pornhub', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/pornhub?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/glitch', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/glitch?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/glitch2', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/glitch2?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/avengers', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/avengers?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/space', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/space?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/ninja', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/ninjalogo?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/marvel', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/marvellogo?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/wolf', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/wolflogo?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/wolf-galaxy', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/wolflogogalaxy?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/3dsteel', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/3dsteel?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/wallgraffiti', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/wallgraffiti?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
+router.get('/coolgraffiti', async(req, res) => {
+	var text = req.query.text.
+	var text2 = req.query.text2
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	if (!text2) return res.json({ message: 'masukan parameter text2' })
+	const result = (await axios.get(`https://me-bagus.herokuapp.com/api/creator/coolgraffiti?apikey=b&text=${text}&text2=${text2}`)).data
+	data = await getBuffer(result.data)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
 module.exports = router
