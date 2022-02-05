@@ -383,6 +383,16 @@ router.get('/darkjoke', async(req, res) => {
     await fs.unlinkSync(__path + '/tmp/waifu.png')
 })
 
+router.get('/asupan', async(req, res) => {
+	var waif = (await axios.get(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/video/tiktok.json`)).data
+	const result = waif[Math.floor(Math.random() * (waif.length))]
+	data = await getBuffer(result.url)
+    await fs.writeFileSync(__path +'/tmp/asupan.mp4', data)
+    await res.sendFile(__path +'/tmp/asupan.mp4')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/asupan.mp4')
+})
+
 //news
 router.get('/bbc', async(req, res) => {
 	result = await BBC()
