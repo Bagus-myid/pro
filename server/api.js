@@ -381,25 +381,4 @@ router.get('/darkjoke', async(req, res) => {
     await fs.unlinkSync(__path + '/tmp/waifu.png')
 })
 
-router.get('/nuliskiri', async(req, res) => {
-var text = req.query.text
-if (!text) return res.json({ message: 'masukan parameter text' })
-spawn('convert', [
-__path + '/lib/buku/sebelumkiri.jpg',
-'-font',
-__path + '/lib/Indie-Flower.ttf',
-'-size',
-'960x1280',
-'-pointsize',
-'22',
-'-interline-spacing',
-'2',
-'-annotate',
-'+140+153',
-fixHeight,
-__path + '/lib/buku/setelahkiri.jpg',
-])
-	res.sendFile(__path + '/lib/buku/setelahkiri.jpg')
-	})
-
 module.exports = router
