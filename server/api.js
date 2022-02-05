@@ -1278,13 +1278,14 @@ router.get('/meme', async (req, res) => {
          comments: comments 
     });
  })
- 
+
 router.get('/nulis', async(req, res) => {
-  var text = req.query.text
+	var text = req.query.text
   if (!text) return res.json({ 'message': 'masukan parameter text!'})
-splitText = text.replace(/(\S+\s*){1,9}/g, '$&\n')
+	try {
+		splitText = text.replace(/(\S+\s*){1,9}/g, '$&\n')
 fixHeight = splitText.split('\n').slice(0, 31).join('\n')
-spawn('convert', [
+		spawn('convert', [
 __path +'/lib/buku/sebelumkiri.jpg',
 '-font',
 __path +'/lib/Indie-Flower.ttf',
@@ -1301,8 +1302,12 @@ __path +'/lib/buku/setelahkiri.jpg'
 ])
 .on('error', () => console.log('error')
 .on('exit', () => {
-    await res.sendFile(__path +'/lib/buku/setelahkiri.jpg')
-    })
+		await res.sendFile(__path +'/lib/buku/setelahkiri.jpg')
+		})
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'Ups, error' })
+	}
 })
 
 module.exports = router
