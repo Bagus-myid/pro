@@ -745,7 +745,7 @@ router.get('/naturalleaves', async(req, res) => {
     await sleep(3000)
     await fs.unlinkSync(__path + '/tmp/waifu.png')
 })
-//M
+
 router.get('/bokeh', async(req, res) => {
 	var text = req.query.text
 	if (!text) return res.json({ message: 'masukan parameter text' })
@@ -1020,7 +1020,6 @@ router.get('/transformer', async(req, res) => {
     await fs.unlinkSync(__path + '/tmp/waifu.png')
 })
 
-//textw
 router.get('/pornhub', async(req, res) => {
 	var text = req.query.text.
 	var text2 = req.query.text2
