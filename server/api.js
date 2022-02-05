@@ -296,6 +296,74 @@ router.get('/kisahnabi', async(req, res) => {
 	})
 })
 
+router.get('/alquran', async(req, res) => {
+	var surah = req.query.surah
+	var ayat = req.query.ayat
+	if (!surah) return res.json({ message: 'masukan parameter surah' })
+	if (!ayat) return res.json({ message: 'masukan parameter ayat' })
+	fetch(encodeURI(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${surah}&ayat=${ayat}`))
+        .then(response => response.json())
+        .then(data => {
+	res.json(data)
+	})
+})
+
+router.get('/wirid', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/bulansutena/Database-1/main/data/dataWirid.json`))
+        .then(response => response.json())
+        .then(data => {
+	res.json(data)
+	})
+})
+
+router.get('/tahlil', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/bulansutena/Database-1/main/data/dataTahlil.json`))
+        .then(response => response.json())
+        .then(data => {
+	res.json(data)
+	})
+})
+
+router.get('/niatshalat', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/bulansutena/Database-1/main/data/dataNiatShalat.json`))
+        .then(response => response.json())
+        .then(data => {
+	res.json(data)
+	})
+})
+
+router.get('/doaharian', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/bulansutena/Database-1/main/data/dataDoaHarian.json`))
+        .then(response => response.json())
+        .then(data => {
+	res.json(data)
+	})
+})
+
+router.get('/bacaanshalat', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/bulansutena/Database-1/main/data/dataBacaanShalat.json`))
+        .then(response => response.json())
+        .then(data => {
+	res.json(data)
+	})
+})
+
+router.get('/ayatkursi', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/bulansutena/Database-1/main/data/dataAyatKursi.json`))
+        .then(response => response.json())
+        .then(data => {
+	res.json(data)
+	})
+})
+
+router.get('/asmaulhusna', async(req, res) => {
+	fetch(encodeURI(`https://raw.githubusercontent.com/bulansutena/Database-1/main/data/dataAsmaulHusna.json`))
+        .then(response => response.json())
+        .then(data => {
+	res.json(data)
+	})
+})
+
 //vokal
 router.get('/halah', async(req, res) => {
 	var text = req.query.text
