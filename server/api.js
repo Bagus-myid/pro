@@ -537,17 +537,4 @@ router.get('/soundcloud', async(req, res) => {
 	}
 })
 
-router.get('/tiktok', async(req, res) => {
-	var link = req.query.link
-	if (!link) return res.json({ message: 'masukan parameter Link' })
-	var hasil = await hxz.ttdownloader(link)
-	const { wm, nowm, audio } = result
-	try {
-		res.json(result)
-	} catch(err) {
-		console.log(err)
-		res.json({ message: 'Ups, error' })
-	}
-})
-
 module.exports = router
