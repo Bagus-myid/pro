@@ -4,6 +4,9 @@ __path = process.cwd()
 const fetch = require('node-fetch')
 const fs = require('fs')
 const hxz = require('hxz-api')
+const zrapi = require("zrapi")
+const cheerio = require('cheerio');
+const request = require('request');
 const { getBuffer } = require('../lib/function')
 const axios = require('axios')
 const { spawn, exec } = require('child_process')
@@ -489,6 +492,21 @@ router.get('/game', async(req, res) => {
         	var result = data[Math.floor(Math.random() * data.length)];
 	res.json(result)
 	})
+})
+
+router.get('/tinyurl', async(req, res) => {
+	var url = req.query.url
+	if (!url) return res.json({ message: 'masukan parameter url' })
+	request(`https://tinyurl.com/api-create.php?url=${url}`, function (error, response, body) {
+	try {
+		res.json({
+                 result : `${body}`
+             })
+	} catch(err) {
+		console.log(err)
+		res.json({ message: 'Url tidak valid' })
+		}
+	}
 })
 
 module.exports = router
