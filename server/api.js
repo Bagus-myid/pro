@@ -384,8 +384,6 @@ router.get('/darkjoke', async(req, res) => {
 router.get('/nuliskiri', async(req, res) => {
 var text = req.query.text
 if (!text) return res.json({ message: 'masukan parameter text' })
-splitText = text.replace(/(\S+\s*){1,9}/g, '$&\n')
-fixHeight = splitText.split('\n').slice(0, 31).join('\n')
 spawn('convert', [
 __path + '/lib/buku/sebelumkiri.jpg',
 '-font',
