@@ -507,7 +507,7 @@ router.get('/fajar', async(req, res) => {
 })
 
 router.get('/kompas', async(req, res) => {
-	result = await iNewsTV_()
+	result = await Kompas_()
 	res.json(result)
 })
 
