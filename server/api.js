@@ -433,7 +433,7 @@ router.get('/alay', async(req, res) => {
 
         return res;
     });
-	res.json(res)
+	res.json(text)
 })
 
 router.get('/couple', async(req, res) => {
