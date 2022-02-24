@@ -400,6 +400,42 @@ router.get('/holoh', async(req, res) => {
 	res.json(result)
 })
 
+router.get('/hilih', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	var result =  text.replace(/[aiueo]/g, 'i').replace(/[AIUEO]/g, 'I')
+	res.json(result)
+})
+
+router.get('/alay', async(req, res) => {
+	var text = req.query.text
+	if (!text) return res.json({ message: 'masukan parameter text' })
+	const alayDict = {
+    a: "4",
+    b: "13",
+    e: "3",
+    g: "9",
+    i: "1",
+    j: "7",
+    o: "0",
+    s: "5"
+};
+	text = text.toLowerCase().replace(/[a-z]/g, c=>{
+
+        let res = "";
+        
+        if(typeof alayDict[c] === 'string' || alayDict[c] instanceof String){
+            res = alayDict[c];
+        }
+        else{
+            res = c;
+        }
+
+        return res;
+    });
+	res.json(res)
+})
+
 router.get('/couple', async(req, res) => {
 	fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/couple.json`))
         .then(response => response.json())
@@ -507,7 +543,7 @@ router.get('/fajar', async(req, res) => {
 })
 
 router.get('/kompas', async(req, res) => {
-	result = await Kompas_()
+	result = await iNewsTV_()
 	res.json(result)
 })
 
