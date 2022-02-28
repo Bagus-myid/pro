@@ -1379,4 +1379,87 @@ router.get('/asupan', async(req, res) => {
 	})
 })
 
+//nsfw
+router.get('/nsfw', async(req, res) => {
+	var type = req.query.type
+	if (!type) return res.json({ message: 'masukan parameter type', list: 'ahegao.json
+ass.json
+
+ass.json
+bdsm.json
+
+bdsm.json
+blowjob.json
+
+blowjob.json
+cuckold.json
+
+cuckold.json
+cum.json
+
+cum.json
+ero.json
+
+ero.json
+femdom.json
+
+femdom.json
+foot.json
+
+foot.json
+gangbang.json
+
+gangbang.json
+glasses.json
+
+glasses.json
+hentai.json
+
+hentai.json
+hnt_gifs.json
+
+hnt_gifs.json
+jahy.json
+
+jahy.json
+manga.json
+
+manga.json
+masturbation.json
+
+masturbation.json
+nsfwNeko.json
+
+nsfwNeko.json
+orgy.json
+
+orgy.json
+panties.json
+
+panties.json
+pussy.json
+
+pussy.json
+sfwNeko.json
+
+sfwNeko.json
+tentacles.json
+
+tentacles.json
+thighs.json
+
+thighs.json
+yuri.json
+
+yuri.json
+zettaiRyouiki.json' })
+	var waif = (await axios.get(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/${type}.json`)).data
+	const result = waif[Math.floor(Math.random() * (waif.length))]
+	data = await getBuffer(result)
+    await fs.writeFileSync(__path +'/tmp/waifu.png', data)
+    await res.sendFile(__path +'/tmp/waifu.png')
+    await sleep(3000)
+    await fs.unlinkSync(__path + '/tmp/waifu.png')
+})
+
 module.exports = router
